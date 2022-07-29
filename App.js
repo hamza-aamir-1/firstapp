@@ -1,10 +1,12 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
+import Home from './src/screens/frontend/Home/Home'
 
 const App = () => {
   return (
     <View style={styles.sectionContainer}>
       <Text style={styles.textClr}>Hello World!</Text>
+      <Home />
     </View>
   )
 }
