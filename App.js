@@ -1,28 +1,20 @@
+import * as React from 'react';
 import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './src/screens/frontend/Home/Home'
 
-const App = () => {
-  return (
-    <View style={styles.sectionContainer}>
-      <Text style={styles.textClr}>Hello World!</Text>
-      <Home />
-    </View>
-  )
-}
+const Stack = createNativeStackNavigator();
 
-const styles = StyleSheet.create({
-  textClr: {
-    color: 'red',
-    fontSize: 20
-  },
-  sectionContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%',
-    height: '100%'
-  },
-});
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home Page" component={Home}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
 export default App
 
