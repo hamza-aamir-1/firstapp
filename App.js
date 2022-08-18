@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Button } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './src/screens/frontend/Home/Home'
@@ -21,7 +21,14 @@ function App() {
             headerTitleAlign: 'center',
             headerTitleStyle: {
               fontWeight: 'bold',
-            }
+            },
+            headerRight: () => (
+              <Button
+                onPress={() => alert('This is a button!')}
+                title="Info"
+                color="#000"
+              />
+            ),
           }}
         />
         <Stack.Screen name='About' component={About}
