@@ -3,14 +3,40 @@ import { View, Text, StyleSheet } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './src/screens/frontend/Home/Home'
+import About from './src/screens/frontend/About/About';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home Page" component={Home}/>
+      <Stack.Navigator initialRouteName='Home'>
+        <Stack.Screen name="Home" component={Home}
+          options={{
+            title: 'My Home',
+            headerStyle: {
+              backgroundColor: 'orange',
+            },
+            headerTintColor: '#fff',
+            headerTitleAlign: 'center',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            }
+          }}
+        />
+        <Stack.Screen name='About' component={About}
+          options={{
+            title: 'About Page',
+            headerStyle: {
+              backgroundColor: 'gray',
+            },
+            headerTintColor: '#fff',
+            headerTitleAlign: 'center',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            }
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
