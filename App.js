@@ -1,16 +1,19 @@
 import * as React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './src/screens/frontend/Home/Home'
 import About from './src/screens/frontend/About/About';
 
-const Stack = createNativeStackNavigator();
+// const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
+
+      {/* <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen name="Home" component={Home}
           options={{
             title: 'My Home',
@@ -30,8 +33,8 @@ function App() {
               />
             ),
           }}
-        />
-        <Stack.Screen name='About' component={About}
+        /> */}
+        {/* <Stack.Screen name='About' component={About}
           options={{
             title: 'About Page',
             headerStyle: {
@@ -44,7 +47,13 @@ function App() {
             }
           }}
         />
-      </Stack.Navigator>
+      </Stack.Navigator> */}
+
+      <Tab.Navigator>
+        <Tab.Screen name='Home' component={Home}/>
+        <Tab.Screen name='About' component={About}/>
+      </Tab.Navigator>
+
     </NavigationContainer>
   );
 }
