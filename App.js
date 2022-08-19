@@ -3,11 +3,13 @@ import { View, Text, StyleSheet, Button } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 // import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home from './src/screens/frontend/Home/Home'
 import About from './src/screens/frontend/About/About';
 
 // const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+// const Drawer = createDrawerNavigator();
 
 function App() {
   return (
@@ -53,6 +55,11 @@ function App() {
         <Tab.Screen name='Home' component={Home}/>
         <Tab.Screen name='About' component={About}/>
       </Tab.Navigator>
+
+      {/* <Drawer.Navigator>
+        <Drawer.Screen name='Home' component={Home}/>
+        <Drawer.Screen name='About' component={About}/>
+      </Drawer.Navigator> */}
 
     </NavigationContainer>
   );
